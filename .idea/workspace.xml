@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GUI/GameForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/GameForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/Tetris.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/TetrisGUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/TetrisGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tetris Battle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tetris Battle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GameForm.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GameForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Tetris.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,18 +41,35 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "252",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "242",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "project.propGUI"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.GameForm">
-    <configuration name="GameForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.GUI.GameForm">
+    <configuration name="GUI.GameForm" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.GameForm" />
+      <module name="Tetris Battle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tetris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI.Tetris" />
       <module name="Tetris Battle" />
       <extension name="coverage">
         <pattern>
@@ -71,7 +90,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameForm" />
+        <item itemvalue="Application.Tetris" />
         <item itemvalue="Application.TetrisGUI" />
       </list>
     </recent_temporary>
@@ -88,6 +107,7 @@
       <workItem from="1668201733844" duration="6799000" />
       <workItem from="1668294508437" duration="2098000" />
       <workItem from="1668460741977" duration="7884000" />
+      <workItem from="1668521333362" duration="6050000" />
     </task>
     <servers />
   </component>

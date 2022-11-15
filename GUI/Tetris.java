@@ -1,7 +1,8 @@
 package GUI;
 
-public class Tetris {
-    public static void main(String[] args) {
+import javax.swing.*;
+import java.awt.*;
 
-    }
+public class Tetris {
+
 }

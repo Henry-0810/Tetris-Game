@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="GUI.TetrisGUI">
+  <grid id="27dc6" binding="gameForm" custom-create="true" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="58" y="34" width="1036" height="560"/>
+    </constraints>
+    <properties>
+      <background color="-11473939"/>
+      <opaque value="true"/>
+      <preferredSize width="900" height="650"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="9ac3f" binding="gameScreen" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints/>
+        <properties>
+          <autoscrolls value="true"/>
+          <background color="-16777216"/>
+          <preferredSize width="300" height="550"/>
+          <requestFocusEnabled value="false"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+    </children>
+  </grid>
+</form>
