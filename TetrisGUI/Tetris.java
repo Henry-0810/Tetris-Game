@@ -5,6 +5,6 @@ import java.awt.*;
 
 public class Tetris {
     public static void main(String[] args) {
-        GameForm tetrisGUI = new GameForm();
+        GameForm gameForm = new GameForm();
     }
 }
