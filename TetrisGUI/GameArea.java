@@ -51,6 +51,7 @@ public class GameArea extends JPanel {
                 x++;
             }
         }
+        grids.setColor(Color.white);
 
     }
 
