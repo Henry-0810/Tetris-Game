@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="GUI grid done">
+      <change afterPath="$PROJECT_DIR$/TetrisGUI/TetrisBlocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TetrisGUI/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGUI/GameArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisGUI/GameForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGUI/GameForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +115,7 @@
       <workItem from="1668521333362" duration="6050000" />
       <workItem from="1668528203002" duration="4082000" />
       <workItem from="1668589536583" duration="9135000" />
+      <workItem from="1668617948470" duration="7439000" />
     </task>
     <task id="LOCAL-00001" summary="GUI grid done">
       <created>1668598945177</created>

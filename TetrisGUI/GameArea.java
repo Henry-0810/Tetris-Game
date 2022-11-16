@@ -11,16 +11,18 @@ public class GameArea extends JPanel {
     private final int gCols = 10;
     private int gRows;
     private int gCellSize;
-    private static int iter;
+    //Creating tetris blocks using this class
+    private TetrisBlocks blocks;
 
     public GameArea(){
         this.setBounds(300,5,300,600);
         this.setBackground(Color.black);
-        Border borderLine = BorderFactory.createLineBorder(Color.black);
+        Border borderLine = BorderFactory.createLineBorder(Color.white);
         this.setBorder(borderLine);
 
         setGCellSize();
         setGRows();
+        createBlocks();
     }
 
     public void setGRows() {
@@ -42,17 +44,36 @@ public class GameArea extends JPanel {
         return gRows;
     }
 
-    protected void paintComponent(Graphics grids) {
-        super.paintComponent(grids);
-        for (int y = 0; y < getGRows(); y++) {
-            int x = 0;
-            while (x < getGCols()) {
-                grids.drawRect(x*getGCellSize(), y*getGCellSize(), getGCellSize(), getGCellSize());
-                x++;
+    public void createBlocks(){
+        blocks = new TetrisBlocks(new int[][]{{1,0},{1,0},{1,1}},Color.orange);
+    }
+    private void drawBlocks(Graphics g) {
+        //created 4 new variables so that getters don't have to reuse over and over
+        int[][] shape = blocks.getShape();
+        Color color = blocks.getColor();
+        int h = blocks.getBlockHeight();
+        int w = blocks.getBlockWidth();
+
+        for (int row = 0; row < h; row++) {
+            for (int col = 0; col < w; col++) {
+                if (shape[row][col] == 1) {
+                    g.setColor(color);
+                    g.fill3DRect(col * getGCellSize(), row * getGCellSize(), getGCellSize(),
+                            getGCellSize(), true);
+                    g.setColor(Color.black);
+                    g.draw3DRect(col * getGCellSize(), row * getGCellSize(), getGCellSize(),
+                            getGCellSize(), true);
+                }
             }
         }
-        grids.setColor(Color.white);
+    }
 
+    /*to make a line become a square, it requires two coordinates,
+    therefore needs 2 loops to paint the grid of tetris board*/
+    protected void paintComponent(Graphics grids) { //Graphics r learned from https://www.javatpoint.com/Graphics-in-swing
+        super.paintComponent(grids);
+
+        drawBlocks(grids);
     }
 
 

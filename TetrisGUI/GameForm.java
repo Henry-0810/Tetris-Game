@@ -22,6 +22,9 @@ public class GameForm extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
+
+    //https://coderanch.com/wiki/660351/Background-Image-JPanel
+    //code below is to change the background of my JFrame by adding a background image panel to it
     private static class BGPanel extends JPanel
     {
         Image image;
