@@ -9,6 +9,7 @@ public class GameArea extends JPanel {
     private int gCellSize;
     //Creating tetris blocks using this class
     private Blocks blocks;
+    private Color[][] bgBlocks; //used color as the array type because diff shapes have diff colors
 
     public GameArea() {
         this.setBounds(300, 5, 300, 600);
@@ -18,7 +19,8 @@ public class GameArea extends JPanel {
 
         setGCellSize();
         setGRows();
-        createBlocks();
+
+        bgBlocks = new Color[getGRows()][getGCols()];
     }
 
     //setters and getters here
@@ -50,18 +52,23 @@ public class GameArea extends JPanel {
         blocks.spawnBlockCords(getGCols());
     }
 
-    public void dropBlocks(){
-        //https://stackoverflow.com/questions/7937029/how-to-break-out-or-exit-a-method-in-java
-        //if false, exit method and run drop() function
-        if(validDropBlock()) return;
+    public boolean dropBlocks(){
+
+        if(validDropBlock()){
+            setBlocksToBg();
+            return false;
+        }
         blocks.drop();
         repaint();
+
+        return true;
     }
 
     //check if blocks at the bottom, it's a private function because it's only for validation purposes in this class
     private boolean validDropBlock(){
         return blocks.getBottomGrid() == getGRows();
     }
+
     private void drawBlocks(Graphics g) {
         //created 4 new variables so that getters don't have to reuse over and over
         int[][] shape = blocks.getShape();
@@ -69,27 +76,71 @@ public class GameArea extends JPanel {
         int h = blocks.getBlockHeight();
         int w = blocks.getBlockWidth();
 
-        for (int row = 0; row < h; row++) {
-            for (int col = 0; col < w; col++) {
+        for (int row = 0; row < h; row++)
+        {
+            for (int col = 0; col < w; col++)
+            {
                 if (shape[row][col] == 1) {
 
                     int x = (blocks.getX() + col) * getGCellSize();
                     int y = (blocks.getY() + row) * getGCellSize();
 
-                    g.setColor(color);
-                    g.fillRect(x, y, getGCellSize(), getGCellSize());
-                    g.setColor(Color.black);
-                    g.drawRect(x, y, getGCellSize(), getGCellSize());
+                    drawGrid(g,color,x,y);
+                }
+            }
+        }
+    }
+    //draw block bg
+    private void drawBG(Graphics g){
+        Color blockColor;
+        for (int row = 0; row < getGRows(); row++) {
+            for (int col = 0; col < getGCols(); col++) {
+
+                blockColor = bgBlocks[row][col];
+
+                if(blockColor != null){
+                    //if the block on grid has color, draw the grid
+                    int x = col*getGCellSize();
+                    int y = row*getGCellSize();
+                    drawGrid(g,blockColor,row,col);
                 }
             }
         }
     }
 
+    //set blocks become background
+    private void setBlocksToBg(){
+        int[][] shape = blocks.getShape();
+        Color color = blocks.getColor();
+        int h = blocks.getBlockHeight();
+        int w = blocks.getBlockWidth();
+
+        int x = blocks.getX();
+        int y = blocks.getY();
+
+        for (int row = 0; row < h; row++) {
+            for (int col = 0; col < w;col++) {
+                if(shape[row][col] == 1){
+                    bgBlocks[row + y][col + x] = color;
+                }
+            }
+        }
+
+
+    }
+    //draw grid
+    private void drawGrid(Graphics grids, Color color, int x, int y){
+        grids.setColor(color);
+        grids.fillRect(x, y, getGCellSize(), getGCellSize());
+        grids.setColor(Color.black);
+        grids.drawRect(x, y, getGCellSize(), getGCellSize());
+    }
+
     /*to make a line become a square, it requires two coordinates,
     therefore needs 2 loops to paint the grid of tetris board*/
-    protected void paintComponent(Graphics grids) { //Graphics r learned from https://www.javatpoint.com/Graphics-in-swing
-        super.paintComponent(grids);
-
-        drawBlocks(grids);
+    protected void paintComponent(Graphics g) { //Graphics r learned from https://www.javatpoint.com/Graphics-in-swing
+        super.paintComponent(g);
+        drawBG(g);
+        drawBlocks(g);
     }
 }

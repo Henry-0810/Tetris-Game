@@ -5,7 +5,12 @@ import java.awt.*;
 
 public class Tetris {
     public static void main(String[] args) {
-        GameFrame gameForm = new GameFrame();
-        gameForm.gameStart();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                GameFrame tetris = new GameFrame();
+                tetris.gameStart();
+            }
+        });
     }
 }

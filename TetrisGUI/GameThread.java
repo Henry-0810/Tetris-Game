@@ -16,12 +16,14 @@ public class GameThread extends Thread{
 
     public void run() {
         while (true) {
-            try {
-                gameArea.dropBlocks();
-                Thread.sleep(500);
-            }
-            catch(InterruptedException e){
-                Logger.getLogger(GameThread.class.getName()).log(Level.SEVERE,null,e);
+            gameArea.createBlocks();
+
+            while(gameArea.dropBlocks()) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    Logger.getLogger(GameThread.class.getName()).log(Level.SEVERE, null, e);
+                }
             }
 
         }

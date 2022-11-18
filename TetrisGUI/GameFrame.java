@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class GameFrame extends JFrame {
-    private Image img;
     private final GameArea gameArea = new GameArea();
 
     public GameFrame(){
