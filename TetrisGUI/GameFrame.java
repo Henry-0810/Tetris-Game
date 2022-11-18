@@ -6,11 +6,11 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-public class GameForm extends JFrame {
-    Image img;
-    GameArea gameArea = new GameArea();
+public class GameFrame extends JFrame {
+    private Image img;
+    private final GameArea gameArea = new GameArea();
 
-    public GameForm(){
+    public GameFrame(){
         this.setTitle("Tetris 2.0");
         JPanel bgFrame = new BGPanel();
         this.setContentPane(bgFrame);
@@ -21,6 +21,10 @@ public class GameForm extends JFrame {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
+    }
+
+    public void gameStart(){
+        new GameThread(gameArea).start();
     }
 
     //https://coderanch.com/wiki/660351/Background-Image-JPanel

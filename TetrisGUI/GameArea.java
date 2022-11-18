@@ -5,17 +5,13 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public class GameArea extends JPanel {
-    //g=grid here
-    /*To get a perfect square for all cell size, first I divide cellsize with rows and cols to get the ratio
-    in order to build a perfect square grid*/
-    private final int gCols = 10;
     private int gRows;
     private int gCellSize;
     //Creating tetris blocks using this class
-    private TetrisBlocks blocks;
+    private Blocks blocks;
 
-    public GameArea(){
-        this.setBounds(300,5,300,600);
+    public GameArea() {
+        this.setBounds(300, 5, 300, 600);
         this.setBackground(Color.black);
         Border borderLine = BorderFactory.createLineBorder(Color.white);
         this.setBorder(borderLine);
@@ -25,27 +21,46 @@ public class GameArea extends JPanel {
         createBlocks();
     }
 
+    //setters and getters here
+
     public void setGRows() {
         gRows = this.getBounds().height / getGCellSize();
     }
+
     public void setGCellSize() {
         gCellSize = this.getBounds().width / getGCols();
     }
 
     public int getGCols() {
-        return gCols;
+        //g=grid here
+        /*To get a perfect square for all cell size, first I divide cellsize with rows and cols to get the ratio
+    in order to build a perfect square grid*/
+        return 10;
     }
 
     public int getGCellSize() {
         return gCellSize;
     }
+    public int getGRows(){return gRows;}
 
-    public int getGRows() {
-        return gRows;
+    //self-defined methods here
+
+    public void createBlocks() {
+        blocks = new Blocks(new int[][]{{1, 0}, {1, 0}, {1, 1}}, Color.orange);
+        blocks.spawnBlockCords(getGCols());
     }
 
-    public void createBlocks(){
-        blocks = new TetrisBlocks(new int[][]{{1,0},{1,0},{1,1}},Color.orange);
+    public void dropBlocks(){
+        //https://stackoverflow.com/questions/7937029/how-to-break-out-or-exit-a-method-in-java
+        //if false, exit method and run drop() function
+        if(validDropBlock()) return;
+        blocks.drop();
+        repaint();
+    }
+
+    //check if blocks at the bottom, it's a private function because it's only for validation purposes in this class
+    private boolean validDropBlock(){
+        return blocks.getBottomGrid() == getGRows();
     }
     private void drawBlocks(Graphics g) {
         //created 4 new variables so that getters don't have to reuse over and over
@@ -57,12 +72,14 @@ public class GameArea extends JPanel {
         for (int row = 0; row < h; row++) {
             for (int col = 0; col < w; col++) {
                 if (shape[row][col] == 1) {
+
+                    int x = (blocks.getX() + col) * getGCellSize();
+                    int y = (blocks.getY() + row) * getGCellSize();
+
                     g.setColor(color);
-                    g.fill3DRect(col * getGCellSize(), row * getGCellSize(), getGCellSize(),
-                            getGCellSize(), true);
+                    g.fillRect(x, y, getGCellSize(), getGCellSize());
                     g.setColor(Color.black);
-                    g.draw3DRect(col * getGCellSize(), row * getGCellSize(), getGCellSize(),
-                            getGCellSize(), true);
+                    g.drawRect(x, y, getGCellSize(), getGCellSize());
                 }
             }
         }
@@ -75,6 +92,4 @@ public class GameArea extends JPanel {
 
         drawBlocks(grids);
     }
-
-
 }
