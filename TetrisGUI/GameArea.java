@@ -10,6 +10,7 @@ public class GameArea extends JPanel {
     //Creating tetris blocks using this class
     private Blocks blocks;
     private Color[][] bgBlocks; //used color as the array type because diff shapes have diff colors
+    private int linesCleared = 0;
 
     public GameArea() {
         this.setBounds(300, 5, 300, 600);
@@ -220,7 +221,7 @@ public class GameArea extends JPanel {
     }
 
     //clear complete lines
-    public void clearCompleteLines(){
+    public int clearCompleteLines(){
         boolean validCompleteLines;
         for (int r = getGRows()-1; r >= 0; r--) {
             validCompleteLines = true;
@@ -232,6 +233,8 @@ public class GameArea extends JPanel {
             }
 
             if(validCompleteLines){
+                linesCleared++;
+                GameFrame.refreshScores(linesCleared);
                 for (int i = 0; i < getGCols(); i++) {
                     bgBlocks[r][i] = null;
                 }
@@ -246,6 +249,7 @@ public class GameArea extends JPanel {
                 repaint();
             }
         }
+        return linesCleared;
     }
 
     public boolean isGameOver(){

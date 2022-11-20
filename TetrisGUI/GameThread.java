@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 //https://www.w3schools.com/java/java_threads.asp learn a few basics from this website
 public class GameThread extends Thread{
     private GameArea gameArea;
+    private int score = 0;
     public GameThread(GameArea gameArea){
         setGameArea(gameArea);
     }
@@ -32,7 +33,8 @@ public class GameThread extends Thread{
             }
 
             gameArea.setBlocksToBg();
-            gameArea.clearCompleteLines();
+            score += gameArea.clearCompleteLines();
+
         }
 
 

@@ -1,6 +1,7 @@
 package TetrisGUI;
 
 import java.awt.*;
+import java.util.Random;
 
 public class Blocks {
     private int[][] shape;
@@ -37,12 +38,11 @@ public class Blocks {
     }
     public void spawnBlockCords(int gridWidth) {
         //these 2 lines must be added b4 the x & y initialization of the block
-        currRotation = 0; //everytime the shape spawns, set to the original rotation
+        currRotation = new Random().nextInt(rotatedShapes.length); //everytime the shape spawns
         setShape(rotatedShapes[currRotation]);
 
-        //basically 0-height for y and sum of gridwidth and blockwidth/2 for x
         //which lets the blocks to spawn right above the grid
-        x = (gridWidth - getBlockWidth()) / 2;
+        x = new Random().nextInt(gridWidth-getBlockWidth());
         y = -getBlockHeight();
     }
 

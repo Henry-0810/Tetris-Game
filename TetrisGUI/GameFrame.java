@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 
 public class GameFrame extends JFrame {
     private final GameArea gameArea = new GameArea();
-    private final GameLabels gameLabels = new GameLabels();
+    private static final GameLabels gameLabels = new GameLabels();
 
     public GameFrame(){
         this.setTitle("Tetris 2.0");
@@ -67,11 +67,10 @@ public class GameFrame extends JFrame {
         new GameThread(gameArea).start();
     }
 
-    public void refreshScores(int score){}
-
-    public void refreshLevels(String level){
-
+    public static void refreshScores(int score){
+        gameLabels.getScoreLabel().setText("Score: " + score);
     }
+
 
     //https://coderanch.com/wiki/660351/Background-Image-JPanel
     //code below is to change the background of my JFrame by adding a background image panel to it
