@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="GUI grid done">
+    <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="rotation, move left right, instant drop done, learn inputmap and actionmap">
+      <change afterPath="$PROJECT_DIR$/TetrisGUI/GameLabels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TetrisGUI/Blocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGUI/Blocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TetrisGUI/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGUI/GameArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TetrisGUI/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGUI/GameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TetrisGUI/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGUI/GameThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TetrisGUI/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGUI/Tetris.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +120,8 @@
       <workItem from="1668617948470" duration="7452000" />
       <workItem from="1668716887465" duration="5852000" />
       <workItem from="1668770607476" duration="4486000" />
-      <workItem from="1668873221853" duration="13037000" />
+      <workItem from="1668873221853" duration="13142000" />
+      <workItem from="1668951209647" duration="8549000" />
     </task>
     <task id="LOCAL-00001" summary="GUI grid done">
       <created>1668598945177</created>
@@ -136,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668642248932</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="rotation, move left right, instant drop done, learn inputmap and actionmap">
+      <created>1668904907198</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668904907198</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +163,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="GUI grid done" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI grid done" />
+    <MESSAGE value="rotation, move left right, instant drop done, learn inputmap and actionmap" />
+    <option name="LAST_COMMIT_MESSAGE" value="rotation, move left right, instant drop done, learn inputmap and actionmap" />
   </component>
 </project>

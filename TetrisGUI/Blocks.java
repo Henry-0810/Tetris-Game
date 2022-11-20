@@ -16,24 +16,13 @@ public class Blocks {
         rotation();
     }
 
-    public void spawnBlockCords(int gridWidth) {
-        //these 2 lines must be added b4 the x & y initialization of the block
-        currRotation = 0; //everytime the shape spawns, set to the original rotation
-        shape = rotatedShapes[currRotation];
-
-        //basically 0-height for y and sum of gridwidth and blockwidth/2 for x
-        //which lets the blocks to spawn right above the grid
-        x = (gridWidth - getBlockWidth()) / 2;
-        y = -getBlockHeight();
-    }
-
     //a method to set rotation of a shape to 4
     private void rotation(){
         rotatedShapes = new int[4][][]; //only consists of 4 rotations
 
         for (int i = 0; i < 4; i++) {
-            int r = shape[0].length;
-            int c = shape.length;
+            int r = getBlockWidth();
+            int c = getBlockHeight();
 
             rotatedShapes[i] = new int[r][c];
 
@@ -43,9 +32,20 @@ public class Blocks {
                 }
             }
 
-            shape = rotatedShapes[i]; //setting a new shape as the current rotation of the shape
+            setShape(rotatedShapes[i]); //setting a new shape as the current rotation of the shape
         }
     }
+    public void spawnBlockCords(int gridWidth) {
+        //these 2 lines must be added b4 the x & y initialization of the block
+        currRotation = 0; //everytime the shape spawns, set to the original rotation
+        setShape(rotatedShapes[currRotation]);
+
+        //basically 0-height for y and sum of gridwidth and blockwidth/2 for x
+        //which lets the blocks to spawn right above the grid
+        x = (gridWidth - getBlockWidth()) / 2;
+        y = -getBlockHeight();
+    }
+
 
     public int[][] getShape() {
         return shape;
@@ -102,5 +102,13 @@ public class Blocks {
 
     public int getBlockWidth() {
         return getShape()[0].length;
+    }
+
+    public int getRightBorder(){
+        return x+getBlockWidth();
+    }
+
+    public int getLeftBorder(){
+        return x;
     }
 }

@@ -53,20 +53,73 @@ public class GameArea extends JPanel {
         blocks.spawnBlockCords(getGCols());
     }
 
-    public boolean blocksDrop(){
-
-        if(!validBlocksDrop()){
-            setBlocksToBg();
-            return false;
-        }
-        blocks.drop();
-        repaint();
-        return true;
-    }
 
     //check if blocks at the bottom, it's a private function because it's only for validation purposes in this class
     private boolean validBlocksDrop(){
-        return blocks.getBottomGrid() != getGRows();
+        if(blocks.getBottomGrid() == getGRows()){
+            return false;
+        }
+
+        int[][] shape = blocks.getShape();
+        int w = blocks.getBlockWidth();
+        int h = blocks.getBlockHeight();
+
+        for (int c = 0; c < w; c++) {
+            for (int r = h-1; r >= 0; r--) {
+                if(shape[r][c] !=0){
+                    int x = c + blocks.getX();
+                    int y = r + blocks.getY() + 1;
+                    if(y<0) break; //meaning that if y is still above the grid, this validation would not be used
+                    if(bgBlocks[y][x] != null) return false; //if(the bgBlocks is null, blocks can be dropped and vice versa
+                    break;
+                }
+            }
+        }
+        return true;
+    }
+    //prevent blocks to exceed left and right border
+    private boolean validLeftBorder(){
+       if(blocks.getLeftBorder() == 0){
+           return false;
+       }
+        int[][] shape = blocks.getShape();
+        int w = blocks.getBlockWidth();
+        int h = blocks.getBlockHeight();
+
+        for (int r = 0; r < h; r++) {
+            for (int c = 0; c < w; c++) {
+                if(shape[r][c] !=0){
+                    int x = c + blocks.getX() - 1;
+                    int y = r + blocks.getY();
+                    if(y<0) break; //meaning that if y is still above the grid, this validation would not be used
+                    if(bgBlocks[y][x] != null) return false; //if(the bgBlocks is null, blocks can be dropped and vice versa
+                    break;
+                }
+            }
+        }
+       return true;
+    }
+
+    private boolean validRightBorder(){
+        if(blocks.getRightBorder() == getGCols()){
+            return false;
+        }
+        int[][] shape = blocks.getShape();
+        int w = blocks.getBlockWidth();
+        int h = blocks.getBlockHeight();
+
+        for (int r = 0; r < h; r++) {
+            for (int c = w-1; c >= 0; c--) {
+                if(shape[r][c] !=0){
+                    int x = c + blocks.getX() + 1;
+                    int y = r + blocks.getY();
+                    if(y<0) break; //meaning that if y is still above the grid, this validation would not be used
+                    if(bgBlocks[y][x] != null) return false; //if(the bgBlocks is null, blocks can be dropped and vice versa
+                    break;
+                }
+            }
+        }
+        return true;
     }
 
     private void drawBlocks(Graphics g) {
@@ -109,7 +162,7 @@ public class GameArea extends JPanel {
     }
 
     //set blocks become background
-    private void setBlocksToBg(){
+    public void setBlocksToBg(){
         int[][] shape = blocks.getShape();
         Color color = blocks.getColor();
         int h = blocks.getBlockHeight();
@@ -126,25 +179,89 @@ public class GameArea extends JPanel {
             }
         }
     }
+
+    //let blocks drop automatically until the bottom grid
+    public boolean blocksDrop(){
+
+        if(!validBlocksDrop()){
+            return false;
+        }
+        blocks.drop();
+        repaint();
+        return true;
+    }
     //move L & R, instantly drop the block, and rotate the block
     public void moveBlockR(){
+        if(blocks == null) return;
+        if(!validRightBorder())return;
+
         blocks.moveR();
-        repaint();
+        repaint(); //to make it less laggy
     }
 
     public void moveBlockL(){
+        if(blocks == null) return;
+        if(!validLeftBorder())return;
+
         blocks.moveL();
         repaint();
     }
     public void instantDropBlock(){
+        if(blocks == null) return;
         while(validBlocksDrop()){
             blocks.drop();
         }
         repaint();
     }
     public void rotateBlock(){
+        if(blocks == null) return;
         blocks.rotate();
         repaint();
+    }
+
+    //clear complete lines
+    public void clearCompleteLines(){
+        boolean validCompleteLines;
+        for (int r = getGRows()-1; r >= 0; r--) {
+            validCompleteLines = true;
+            for (int c = 0; c < getGCols(); c++) {
+                if(bgBlocks[r][c] == null) {
+                    validCompleteLines = false;
+                    break;
+                }
+            }
+
+            if(validCompleteLines){
+                for (int i = 0; i < getGCols(); i++) {
+                    bgBlocks[r][i] = null;
+                }
+
+                shiftDown(r);
+
+                for (int i = 0; i < getGCols(); i++) {
+                    bgBlocks[0][i] = null;
+                }
+
+                r++;
+                repaint();
+            }
+        }
+    }
+
+    public boolean isGameOver(){
+        if(blocks.getY() < 0){
+            blocks = null;
+            return true;
+        }
+        return false;
+    }
+
+    private void shiftDown(int row) {
+        for (int r = row; r > 0; r--) {
+            for (int c = 0; c < getGCols(); c++) {
+                bgBlocks[r][c] = bgBlocks[r-1][c];
+            }
+        }
     }
 
     //draw grid
@@ -159,7 +276,7 @@ public class GameArea extends JPanel {
     therefore needs 2 loops to paint the grid of tetris board*/
     protected void paintComponent(Graphics g) { //Graphics r learned from https://www.javatpoint.com/Graphics-in-swing
         super.paintComponent(g);
-        drawBlocks(g);
         drawBG(g);
+        drawBlocks(g);
     }
 }

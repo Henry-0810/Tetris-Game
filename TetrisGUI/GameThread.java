@@ -26,6 +26,13 @@ public class GameThread extends Thread{
                 }
             }
 
+            if(gameArea.isGameOver()){
+                System.out.println("GameOver!");
+                break;
+            }
+
+            gameArea.setBlocksToBg();
+            gameArea.clearCompleteLines();
         }
 
 

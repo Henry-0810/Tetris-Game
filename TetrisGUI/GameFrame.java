@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 
 public class GameFrame extends JFrame {
     private final GameArea gameArea = new GameArea();
+    private final GameLabels gameLabels = new GameLabels();
 
     public GameFrame(){
         this.setTitle("Tetris 2.0");
@@ -13,6 +14,7 @@ public class GameFrame extends JFrame {
         this.setContentPane(bgFrame);
         //add gameArea
         this.add(gameArea);
+        this.add(gameLabels);
         this.setSize(900,650);
         this.setLayout(null);
         this.setLocationRelativeTo(null);
@@ -63,6 +65,12 @@ public class GameFrame extends JFrame {
     }
     public void gameStart(){
         new GameThread(gameArea).start();
+    }
+
+    public void refreshScores(int score){}
+
+    public void refreshLevels(String level){
+
     }
 
     //https://coderanch.com/wiki/660351/Background-Image-JPanel
