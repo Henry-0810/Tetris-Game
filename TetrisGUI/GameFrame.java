@@ -1,10 +1,8 @@
 package TetrisGUI;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
+import java.awt.event.ActionEvent;
 
 public class GameFrame extends JFrame {
     private final GameArea gameArea = new GameArea();
@@ -20,8 +18,49 @@ public class GameFrame extends JFrame {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
+        keyBinds();
     }
 
+    private void keyBinds(){
+        //https://docs.oracle.com/javase/7/docs/api/javax/swing/InputMap.html
+        //https://docs.oracle.com/javase/7/docs/api/javax/swing/ActionMap.html
+        InputMap im = this.getRootPane().getInputMap();
+        ActionMap am = this.getRootPane().getActionMap();
+
+        im.put(KeyStroke.getKeyStroke("UP"),"rotate");
+        im.put(KeyStroke.getKeyStroke("SPACE"),"instant");
+        im.put(KeyStroke.getKeyStroke("LEFT"),"moveL");
+        im.put(KeyStroke.getKeyStroke("RIGHT"),"moveR");
+
+        //https://docs.oracle.com/javase/7/docs/api/javax/swing/AbstractAction.html
+        am.put("rotate", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameArea.rotateBlock();
+            }
+        });
+        am.put("instant", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameArea.instantDropBlock();
+            }
+        });
+        am.put("moveL", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameArea.moveBlockL();
+            }
+        });
+        am.put("moveR", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameArea.moveBlockR();
+            }
+        });
+
+
+
+    }
     public void gameStart(){
         new GameThread(gameArea).start();
     }

@@ -9,6 +9,7 @@ public class Tetris {
             @Override
             public void run() {
                 GameFrame tetris = new GameFrame();
+
                 tetris.gameStart();
             }
         });

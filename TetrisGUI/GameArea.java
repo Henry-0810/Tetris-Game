@@ -21,6 +21,7 @@ public class GameArea extends JPanel {
         setGRows();
 
         bgBlocks = new Color[getGRows()][getGCols()];
+
     }
 
     //setters and getters here
@@ -52,21 +53,20 @@ public class GameArea extends JPanel {
         blocks.spawnBlockCords(getGCols());
     }
 
-    public boolean dropBlocks(){
+    public boolean blocksDrop(){
 
-        if(validDropBlock()){
+        if(!validBlocksDrop()){
             setBlocksToBg();
             return false;
         }
         blocks.drop();
         repaint();
-
         return true;
     }
 
     //check if blocks at the bottom, it's a private function because it's only for validation purposes in this class
-    private boolean validDropBlock(){
-        return blocks.getBottomGrid() == getGRows();
+    private boolean validBlocksDrop(){
+        return blocks.getBottomGrid() != getGRows();
     }
 
     private void drawBlocks(Graphics g) {
@@ -102,7 +102,7 @@ public class GameArea extends JPanel {
                     //if the block on grid has color, draw the grid
                     int x = col*getGCellSize();
                     int y = row*getGCellSize();
-                    drawGrid(g,blockColor,row,col);
+                    drawGrid(g,blockColor,x,y);
                 }
             }
         }
@@ -125,9 +125,28 @@ public class GameArea extends JPanel {
                 }
             }
         }
-
-
     }
+    //move L & R, instantly drop the block, and rotate the block
+    public void moveBlockR(){
+        blocks.moveR();
+        repaint();
+    }
+
+    public void moveBlockL(){
+        blocks.moveL();
+        repaint();
+    }
+    public void instantDropBlock(){
+        while(validBlocksDrop()){
+            blocks.drop();
+        }
+        repaint();
+    }
+    public void rotateBlock(){
+        blocks.rotate();
+        repaint();
+    }
+
     //draw grid
     private void drawGrid(Graphics grids, Color color, int x, int y){
         grids.setColor(color);
@@ -140,7 +159,7 @@ public class GameArea extends JPanel {
     therefore needs 2 loops to paint the grid of tetris board*/
     protected void paintComponent(Graphics g) { //Graphics r learned from https://www.javatpoint.com/Graphics-in-swing
         super.paintComponent(g);
-        drawBG(g);
         drawBlocks(g);
+        drawBG(g);
     }
 }

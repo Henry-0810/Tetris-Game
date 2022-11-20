@@ -18,7 +18,7 @@ public class GameThread extends Thread{
         while (true) {
             gameArea.createBlocks();
 
-            while(gameArea.dropBlocks()) {
+            while(gameArea.blocksDrop()) {
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
