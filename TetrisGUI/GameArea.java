@@ -1,14 +1,19 @@
 package TetrisGUI;
 
+import TetrisBlocks.*;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class GameArea extends JPanel {
     private int gRows;
     private int gCellSize;
     //Creating tetris blocks using this class
     private Blocks blocks;
+    private ArrayList<Blocks> allBlocks;
     private Color[][] bgBlocks; //used color as the array type because diff shapes have diff colors
     private int linesCleared = 0;
 
@@ -22,6 +27,14 @@ public class GameArea extends JPanel {
         setGRows();
 
         bgBlocks = new Color[getGRows()][getGCols()];
+        allBlocks = new ArrayList<>();
+        allBlocks.add(new SquareShape());
+        allBlocks.add(new LShape());
+        allBlocks.add(new OpLShape());
+        allBlocks.add(new ZShape());
+        allBlocks.add(new OpZShape());
+        allBlocks.add(new IShape());
+        allBlocks.add(new TShape());
 
     }
 
@@ -50,7 +63,9 @@ public class GameArea extends JPanel {
     //self-defined methods here
 
     public void createBlocks() {
-        blocks = new Blocks(new int[][]{{1, 0}, {1, 0}, {1, 1}}, Color.orange);
+        int rngIndex = new Random().nextInt(allBlocks.size());
+        blocks = allBlocks.get(rngIndex); //spawns random blocks
+
         blocks.spawnBlockCords(getGCols());
     }
 

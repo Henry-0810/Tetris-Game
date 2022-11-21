@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="labels">
+      <change afterPath="$PROJECT_DIR$/TetrisBlocks/IShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TetrisBlocks/LShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TetrisBlocks/OpLShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TetrisBlocks/OpZShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TetrisBlocks/SquareShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TetrisBlocks/TShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TetrisBlocks/ZShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TetrisGUI/Blocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGUI/Blocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TetrisGUI/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGUI/GameArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TetrisGUI/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGUI/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TetrisGUI/GameLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGUI/GameLabels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TetrisGUI/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGUI/GameThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +125,7 @@
       <workItem from="1668770607476" duration="4486000" />
       <workItem from="1668873221853" duration="13142000" />
       <workItem from="1668951209647" duration="16737000" />
+      <workItem from="1669034678310" duration="3800000" />
     </task>
     <task id="LOCAL-00001" summary="GUI grid done">
       <created>1668598945177</created>
