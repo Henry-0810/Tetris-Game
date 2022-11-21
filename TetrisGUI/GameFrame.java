@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class GameFrame extends JFrame {
+    ImageIcon imageIcon = new ImageIcon("TetrisGUI/GameIcon.png"); //game icon
     private final GameArea gameArea = new GameArea();
     private static final GameLabels gameLabels = new GameLabels();
 
@@ -16,6 +17,7 @@ public class GameFrame extends JFrame {
         this.add(gameArea);
         this.add(gameLabels);
         this.setSize(900,650);
+        this.setIconImage(imageIcon.getImage());
         this.setLayout(null);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

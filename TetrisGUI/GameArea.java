@@ -108,7 +108,7 @@ public class GameArea extends JPanel {
                     int x = c + blocks.getX() - 1;
                     int y = r + blocks.getY();
                     if(y<0) break; //meaning that if y is still above the grid, this validation would not be used
-                    if(bgBlocks[y][x] != null) return false; //if(the bgBlocks is null, blocks can be dropped and vice versa
+                    if(bgBlocks[y][x] != null) return false; //if(the bgBlocks is null, blocks can be moved and vice versa
                     break;
                 }
             }
@@ -130,7 +130,7 @@ public class GameArea extends JPanel {
                     int x = c + blocks.getX() + 1;
                     int y = r + blocks.getY();
                     if(y<0) break; //meaning that if y is still above the grid, this validation would not be used
-                    if(bgBlocks[y][x] != null) return false; //if(the bgBlocks is null, blocks can be dropped and vice versa
+                    if(bgBlocks[y][x] != null) return false; //if(the bgBlocks is null, blocks can be moved and vice versa
                     break;
                 }
             }
@@ -232,8 +232,14 @@ public class GameArea extends JPanel {
     public void rotateBlock(){
         if(blocks == null) return;
         blocks.rotate();
+        //make it so blocks won't rotate out of bounds
+        if(bgBlocks != null) return;
+        if(blocks.getLeftBorder() < 0) blocks.setX(0);
+        if(blocks.getRightBorder() >= getGCols()) blocks.setX(getGCols()-blocks.getBlockWidth());
+        if(blocks.getBottomGrid() >= getGRows()) blocks.setY(getGRows() - blocks.getBlockHeight());
         repaint();
     }
+
 
     //clear complete lines
     public int clearCompleteLines(){
