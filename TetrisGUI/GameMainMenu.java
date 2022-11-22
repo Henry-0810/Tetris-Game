@@ -2,8 +2,8 @@ package TetrisGUI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
 
 public class GameMainMenu extends JFrame {
     public GameMainMenu(){
@@ -41,18 +41,16 @@ public class GameMainMenu extends JFrame {
     }
     //creating a font package for title
     //https://stackoverflow.com/questions/21081586/using-a-custom-font-for-a-jlabel
-    private static class titleFonts extends JPanel {
+    private static class titleFonts extends JLabel {
         public titleFonts() {
-            setLayout(null);
-            this.setBounds(150,150,300,100);
-            this.setBackground(new Color(0f,0f,0f,0.5f));
             try {
-                Font font = Font.createFont(Font.TRUETYPE_FONT, getClass().getResourceAsStream("TetrisGUI/additionalFiles/TitleFont.ttf"));
-                JLabel title = new JLabel("Tetris 2.0");
-                title.setFont(font.deriveFont(Font.BOLD, 48f));
-                title.setBounds(0,0,250,90);
-                title.setBackground(new Color(0f,0f,0f,0.5f));
-                this.add(title);
+                Font font = Font.createFont(Font.TRUETYPE_FONT,
+                        new File("TetrisGUI/additionalFiles/TitleFont.ttf"));
+                this.setText("Tetris 2.0");
+                this.setForeground(Color.BLACK);
+                this.setFont(font.deriveFont(Font.BOLD, 48f));
+                this.setBounds(150,150,250,90);
+                this.setBackground(new Color(0f,0f,0f,0.5f));
             } catch (FontFormatException | IOException ex) {
                 ex.printStackTrace();
             }
