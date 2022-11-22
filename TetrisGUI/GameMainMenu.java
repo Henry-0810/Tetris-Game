@@ -2,31 +2,46 @@ package TetrisGUI;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 public class GameMainMenu extends JFrame {
-    public GameMainMenu(){
+    ImageIcon imageIcon = new ImageIcon("TetrisGUI/additionalFiles/GameIcon.png"); //game icon
+
+    public GameMainMenu() {
         this.setTitle("Tetris 2.0");
-        JPanel bgFrame = new BGPanel();
-        this.add(new titleFonts());
-        this.setContentPane(bgFrame);
-        this.setSize(600,600);
+        JLabel title = new titleLabel();
+        JPanel bg = new JPanel();
+        bg.setBackground(Color.black);
+        JPanel titlePic = new TitlePanel();
+        JButton start = new JButton("Start");
+        start.setBounds(150,200,175,50);
+        start.setBackground(Color.black);
+        start.setForeground(Color.white);
+        start.setFont(new Font("comic sans ms",Font.PLAIN,30));
+        this.setContentPane(bg);
+        this.setIconImage(imageIcon.getImage());
+        this.add(title);
+        this.add(titlePic);
+        this.add(start);
+        this.setSize(500, 500);
         this.setLayout(null);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
+
+
     }
 
-    private static class BGPanel extends JPanel
+    private static class TitlePanel extends JPanel
     {
         Image image;
-        public BGPanel()
+        public TitlePanel()
         {
+            this.setBounds(186,0,128,128);
+            this.setBackground(new Color(0f,0f,0f,0.5f));
             try
             {
-                image = Toolkit.getDefaultToolkit().createImage("TetrisGUI/additionalFiles/GameMainMenuBG.jpg");
+                image = Toolkit.getDefaultToolkit().createImage("TetrisGUI/additionalFiles/GameTitlePic.png");
             }
             catch (Exception e) { /*handled in paintComponent()*/ }
         }
@@ -39,22 +54,14 @@ public class GameMainMenu extends JFrame {
                 g.drawImage(image, 0,0,this.getWidth(),this.getHeight(),this);
         }
     }
-    //creating a font package for title
-    //https://stackoverflow.com/questions/21081586/using-a-custom-font-for-a-jlabel
-    private static class titleFonts extends JLabel {
-        public titleFonts() {
-            try {
-                Font font = Font.createFont(Font.TRUETYPE_FONT,
-                        new File("TetrisGUI/additionalFiles/TitleFont.ttf"));
-                this.setText("Tetris 2.0");
-                this.setForeground(Color.BLACK);
-                this.setFont(font.deriveFont(Font.BOLD, 48f));
-                this.setBounds(150,150,250,90);
-                this.setBackground(new Color(0f,0f,0f,0.5f));
-            } catch (FontFormatException | IOException ex) {
-                ex.printStackTrace();
-            }
-        }
+    private static class titleLabel extends JLabel{
+        public titleLabel(){
+            this.setText("<html><font color='#FD1C03'>T</font><font color='#FF6700'>e</font><font color='FFFF33'>t</font>" +
+                    "<font color='#16F529'>r</font><font color='#1589FF'>i</font>" +
+                    "<font color='7B00FF'>s</font> <font color='9D00FF'>2.0</font></html>");
+            this.setBounds(65,108,470,100);
+            this.setFont(new Font("comic sans ms",Font.BOLD+Font.ITALIC,70));
 
+        }
     }
 }
