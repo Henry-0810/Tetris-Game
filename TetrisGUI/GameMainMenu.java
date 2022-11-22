@@ -2,9 +2,11 @@ package TetrisGUI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GameMainMenu extends JFrame {
-    ImageIcon imageIcon = new ImageIcon("TetrisGUI/additionalFiles/GameIcon.png"); //game icon
+    public static ImageIcon imageIcon = new ImageIcon("TetrisGUI/additionalFiles/GameIcon.png"); //game icon
 
     public GameMainMenu() {
         this.setTitle("Tetris 2.0");
@@ -16,12 +18,20 @@ public class GameMainMenu extends JFrame {
         start.setBounds(150,200,175,50);
         start.setBackground(Color.black);
         start.setForeground(Color.white);
-        start.setFont(new Font("comic sans ms",Font.PLAIN,30));
+        start.setFont(new Font("Monospaced",Font.PLAIN,30));
+        start.addActionListener(new StartGame());
+        JButton exit = new JButton("Exit");
+        exit.setBounds(150,260,175,50);
+        exit.setBackground(Color.black);
+        exit.setForeground(Color.white);
+        exit.setFont(new Font("Monospaced",Font.PLAIN,30));
+        exit.addActionListener(new ExitGame());
         this.setContentPane(bg);
         this.setIconImage(imageIcon.getImage());
         this.add(title);
         this.add(titlePic);
         this.add(start);
+        this.add(exit);
         this.setSize(500, 500);
         this.setLayout(null);
         this.setResizable(false);
@@ -30,6 +40,36 @@ public class GameMainMenu extends JFrame {
         this.setVisible(true);
 
 
+    }
+
+    private static class StartGame implements ActionListener
+    {
+        //@SuppressWarnings("deprecation")
+        public void actionPerformed(ActionEvent action)
+        {
+            GameFrame gameFrame = new GameFrame();
+            gameFrame.setVisible(true);
+            gameFrame.gameStart();
+
+            GameMainMenu gameMainMenu = new GameMainMenu();
+            gameMainMenu.setVisible(false);
+
+        }
+    }
+
+    private class ExitGame implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            int exitInterface = JOptionPane.showConfirmDialog(null,"Are you sure you want to exit Tetris 2.0?","Tetris 2.0",
+                    JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,imageIcon);
+            if(exitInterface == JOptionPane.YES_OPTION){
+                System.exit(0);
+            }
+            else{
+                remove(exitInterface);
+            }
+        }
     }
 
     private static class TitlePanel extends JPanel

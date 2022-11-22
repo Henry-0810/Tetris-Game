@@ -3,6 +3,7 @@ package TetrisGUI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GameFrame extends JFrame {
     ImageIcon imageIcon = new ImageIcon("TetrisGUI/additionalFiles/GameIcon.png"); //game icon
@@ -12,10 +13,12 @@ public class GameFrame extends JFrame {
     public GameFrame(){
         this.setTitle("Tetris 2.0");
         JPanel bgFrame = new BGPanel();
+        JButton backBtn = new BackBtn();
         this.setContentPane(bgFrame);
         //add gameArea
         this.add(gameArea);
         this.add(gameLabels);
+        this.add(backBtn);
         this.setSize(900,650);
         this.setIconImage(imageIcon.getImage());
         this.setLayout(null);
@@ -95,6 +98,30 @@ public class GameFrame extends JFrame {
             super.paintComponent(g);
             if (image != null)
                 g.drawImage(image, 0,0,this.getWidth(),this.getHeight(),this);
+        }
+    }
+
+    public static class BackBtn extends JButton{
+        public BackBtn(){
+             this.setText("<--");
+             this.setBounds(0,0,50,50);
+             this.setBackground(new Color(0f,0f,0f,0.5f));
+             this.addActionListener(new BackToMainMenu());
+        }
+    }
+
+    public static class BackToMainMenu implements ActionListener
+    {
+        //@SuppressWarnings("deprecation")
+        public void actionPerformed(ActionEvent action)
+        {
+            GameMainMenu gameMainMenu = new GameMainMenu();
+            gameMainMenu.setVisible(true);
+
+            GameFrame gameFrame = new GameFrame();
+            gameFrame.setVisible(false);
+            gameFrame.dispose();
+
         }
     }
 }
