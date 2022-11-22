@@ -8,9 +8,10 @@ public class Tetris {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                GameFrame tetris = new GameFrame();
+                //GameFrame tetris = new GameFrame();
+                GameMainMenu tetrisMainMenu = new GameMainMenu();
 
-                tetris.gameStart();
+                //tetris.gameStart();
             }
         });
     }
