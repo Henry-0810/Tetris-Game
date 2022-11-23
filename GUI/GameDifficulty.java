@@ -2,6 +2,7 @@ package GUI;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -50,6 +51,7 @@ public class GameDifficulty extends JFrame {
             easy.setBackground(new Color(190,179,148));
             easy.setForeground(Color.white);
             easy.setFont(new Font("Monospaced",Font.PLAIN,30));
+            easy.addActionListener(new gameModeEasy());
             JButton medium = new JButton();
             medium.setText("Weak!");
             medium.setToolTipText("Normal mode");
@@ -57,6 +59,7 @@ public class GameDifficulty extends JFrame {
             medium.setBackground(new Color(175,220,235));
             medium.setForeground(Color.white);
             medium.setFont(new Font("Monospaced",Font.PLAIN,30));
+            medium.addActionListener(new gameModeMedium());
             JButton hard = new JButton();
             hard.setText("U a GOD!");
             hard.setToolTipText("Hard mode");
@@ -64,6 +67,7 @@ public class GameDifficulty extends JFrame {
             hard.setBackground(new Color(241,21,20));
             hard.setForeground(Color.white);
             hard.setFont(new Font("Monospaced",Font.PLAIN,30));
+            hard.addActionListener(new gameModeHard());
             this.add(easy);
             this.add(medium);
             this.add(hard);
@@ -71,12 +75,13 @@ public class GameDifficulty extends JFrame {
     }
 
     public class BackBtn extends JButton{
+        ImageIcon img = new ImageIcon("GUI/additionalFiles/BackBtnIcon.png");
         public BackBtn(){
-            this.setText("<");
-            this.setForeground(Color.white);
-            this.setBounds(0,0,50,30);
+            this.setIcon(img);
+            this.setBounds(0,10,50,50);
             this.setBackground(new Color(0f,0f,0f,0.5f));
             this.setFont(new Font("Monospaced",Font.PLAIN,6));
+            this.setBorder(new LineBorder(Color.white));
             this.addActionListener(new BackToMainMenu());
         }
     }
@@ -88,6 +93,45 @@ public class GameDifficulty extends JFrame {
         {
             GameMainMenu gameMainMenu = new GameMainMenu();
             gameMainMenu.setVisible(true);
+
+            GameDifficulty.this.dispose();
+        }
+    }
+
+    public class gameModeEasy implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            GameThread gameThread = new GameThread(new GameArea());
+            gameThread.setSpeed(1000);
+            GameFrame gameFrame = new GameFrame();
+            gameFrame.gameStart();
+
+            GameDifficulty.this.dispose();
+        }
+    }
+
+    public class gameModeMedium implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            GameThread gameThread = new GameThread(new GameArea());
+            gameThread.setSpeed(400);
+            GameFrame gameFrame = new GameFrame();
+            gameFrame.gameStart();
+
+            GameDifficulty.this.dispose();
+        }
+    }
+
+    public class gameModeHard implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            GameThread gameThread = new GameThread(new GameArea());
+            gameThread.setSpeed(50);
+            GameFrame gameFrame = new GameFrame();
+            gameFrame.gameStart();
 
             GameDifficulty.this.dispose();
         }

@@ -13,6 +13,7 @@ public class GameMainMenu extends JFrame {
         JLabel title = new titleLabel();
         JPanel bg = new JPanel();
         bg.setBackground(Color.black);
+        this.setContentPane(bg);
         JPanel titlePic = new TitlePanel();
         JButton start = new JButton("Start");
         start.setBounds(150,200,175,50);
@@ -26,7 +27,6 @@ public class GameMainMenu extends JFrame {
         exit.setForeground(Color.white);
         exit.setFont(new Font("Monospaced",Font.PLAIN,30));
         exit.addActionListener(new ExitGame());
-        this.setContentPane(bg);
         this.setIconImage(imageIcon.getImage());
         this.add(title);
         this.add(titlePic);
@@ -47,9 +47,6 @@ public class GameMainMenu extends JFrame {
         //@SuppressWarnings("deprecation")
         public void actionPerformed(ActionEvent action)
         {
-//            GameFrame gameFrame = new GameFrame();
-//            gameFrame.setVisible(true);
-//            gameFrame.gameStart();
             GameDifficulty gameDifficulty = new GameDifficulty();
             gameDifficulty.setVisible(true);
 

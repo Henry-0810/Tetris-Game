@@ -229,13 +229,15 @@ public class GameArea extends JPanel {
         repaint();
     }
     public void rotateBlock(){
+
         if(blocks == null) return;
+        if(!validBlocksDrop() || !validLeftBorder() || !validRightBorder()) return;
         blocks.rotate();
         //make it so blocks won't rotate out of bounds
-        if(bgBlocks != null) return;
         if(blocks.getLeftBorder() < 0) blocks.setX(0);
         if(blocks.getRightBorder() >= getGCols()) blocks.setX(getGCols()-blocks.getBlockWidth());
         if(blocks.getBottomGrid() >= getGRows()) blocks.setY(getGRows() - blocks.getBlockHeight());
+        if(!validBlocksDrop() || !validLeftBorder() || !validRightBorder()) return;
         repaint();
     }
 

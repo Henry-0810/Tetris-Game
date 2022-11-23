@@ -1,4 +1,6 @@
+import GUI.GameFrame;
 import GUI.GameMainMenu;
+import GUI.GameOver;
 
 import java.awt.*;
 

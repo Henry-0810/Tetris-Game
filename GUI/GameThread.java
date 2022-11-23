@@ -37,7 +37,10 @@ public class GameThread extends Thread{
             }
 
             if(gameArea.isGameOver()){
-                System.out.println("GameOver!");
+                GameFrame game = new GameFrame();
+                game.dispose();
+                GameOver gameOver = new GameOver();
+                gameOver.setVisible(true);
                 break;
             }
 

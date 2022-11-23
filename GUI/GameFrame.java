@@ -1,13 +1,14 @@
 package GUI;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GameFrame extends JFrame {
     ImageIcon imageIcon = new ImageIcon("GUI/additionalFiles/GameIcon.png"); //game icon
-    private final GameArea gameArea = new GameArea();
+    private GameArea gameArea;
     private static final GameLabels gameLabels = new GameLabels();
 
     public GameFrame(){
@@ -16,7 +17,8 @@ public class GameFrame extends JFrame {
         JButton backBtn = new BackBtn();
         this.setContentPane(bgFrame);
         //add gameArea
-        this.add(gameArea);
+        setGameArea();
+        this.add(getGameArea());
         this.add(gameLabels);
         this.add(backBtn);
         this.setSize(900,650);
@@ -27,6 +29,14 @@ public class GameFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         keyBinds();
+    }
+
+    public GameArea getGameArea() {
+        return gameArea;
+    }
+
+    public void setGameArea() {
+        this.gameArea = new GameArea();
     }
 
     private void keyBinds(){
@@ -73,6 +83,7 @@ public class GameFrame extends JFrame {
         new GameThread(gameArea).start();
     }
 
+
     public static void refreshScores(int score){
         gameLabels.getScoreLabel().setText("Score: " + score);
     }
@@ -102,13 +113,14 @@ public class GameFrame extends JFrame {
     }
 
     public class BackBtn extends JButton{
+        ImageIcon img = new ImageIcon("GUI/additionalFiles/BackBtnIcon.png");
         public BackBtn(){
-            this.setText("<");
-             this.setForeground(Color.white);
-             this.setBounds(0,0,50,30);
-             this.setBackground(new Color(0f,0f,0f,0.5f));
-             this.setFont(new Font("Monospaced",Font.PLAIN,6));
-             this.addActionListener(new BackToMainMenu());
+            this.setIcon(img);
+            this.setBounds(0,10,50,60);
+            this.setBackground(new Color(0f,0f,0f,0.5f));
+            this.setFont(new Font("Monospaced",Font.PLAIN,6));
+            this.setBorder(new LineBorder(Color.white));
+            this.addActionListener(new BackToMainMenu());
         }
     }
 
