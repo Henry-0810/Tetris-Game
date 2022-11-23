@@ -1,4 +1,4 @@
-package TetrisGUI;
+package GUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GameMainMenu extends JFrame {
-    public static ImageIcon imageIcon = new ImageIcon("TetrisGUI/additionalFiles/GameIcon.png"); //game icon
+    public static ImageIcon imageIcon = new ImageIcon("GUI/additionalFiles/GameIcon.png"); //game icon
 
     public GameMainMenu() {
         this.setTitle("Tetris 2.0");
@@ -42,18 +42,18 @@ public class GameMainMenu extends JFrame {
 
     }
 
-    private static class StartGame implements ActionListener
+    private class StartGame implements ActionListener
     {
         //@SuppressWarnings("deprecation")
         public void actionPerformed(ActionEvent action)
         {
-            GameFrame gameFrame = new GameFrame();
-            gameFrame.setVisible(true);
-            gameFrame.gameStart();
+//            GameFrame gameFrame = new GameFrame();
+//            gameFrame.setVisible(true);
+//            gameFrame.gameStart();
+            GameDifficulty gameDifficulty = new GameDifficulty();
+            gameDifficulty.setVisible(true);
 
-            GameMainMenu gameMainMenu = new GameMainMenu();
-            gameMainMenu.setVisible(false);
-
+            GameMainMenu.this.dispose();
         }
     }
 
@@ -65,9 +65,6 @@ public class GameMainMenu extends JFrame {
                     JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,imageIcon);
             if(exitInterface == JOptionPane.YES_OPTION){
                 System.exit(0);
-            }
-            else{
-                remove(exitInterface);
             }
         }
     }
@@ -81,7 +78,7 @@ public class GameMainMenu extends JFrame {
             this.setBackground(new Color(0f,0f,0f,0.5f));
             try
             {
-                image = Toolkit.getDefaultToolkit().createImage("TetrisGUI/additionalFiles/GameTitlePic.png");
+                image = Toolkit.getDefaultToolkit().createImage("GUI/additionalFiles/GameTitlePic.png");
             }
             catch (Exception e) { /*handled in paintComponent()*/ }
         }

@@ -1,4 +1,4 @@
-package TetrisGUI;
+package GUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GameFrame extends JFrame {
-    ImageIcon imageIcon = new ImageIcon("TetrisGUI/additionalFiles/GameIcon.png"); //game icon
+    ImageIcon imageIcon = new ImageIcon("GUI/additionalFiles/GameIcon.png"); //game icon
     private final GameArea gameArea = new GameArea();
     private static final GameLabels gameLabels = new GameLabels();
 
@@ -87,7 +87,7 @@ public class GameFrame extends JFrame {
         {
             try
             {
-                image = Toolkit.getDefaultToolkit().createImage("TetrisGUI/additionalFiles/GameFormBG.png");
+                image = Toolkit.getDefaultToolkit().createImage("GUI/additionalFiles/GameFormBG.png");
             }
             catch (Exception e) { /*handled in paintComponent()*/ }
         }
@@ -101,27 +101,26 @@ public class GameFrame extends JFrame {
         }
     }
 
-    public static class BackBtn extends JButton{
+    public class BackBtn extends JButton{
         public BackBtn(){
-             this.setText("<--");
-             this.setBounds(0,0,50,50);
+            this.setText("<");
+             this.setForeground(Color.white);
+             this.setBounds(0,0,50,30);
              this.setBackground(new Color(0f,0f,0f,0.5f));
+             this.setFont(new Font("Monospaced",Font.PLAIN,6));
              this.addActionListener(new BackToMainMenu());
         }
     }
 
-    public static class BackToMainMenu implements ActionListener
+    public class BackToMainMenu implements ActionListener
     {
         //@SuppressWarnings("deprecation")
         public void actionPerformed(ActionEvent action)
         {
-            GameMainMenu gameMainMenu = new GameMainMenu();
-            gameMainMenu.setVisible(true);
+            GameDifficulty gameDifficulty = new GameDifficulty();
+            gameDifficulty.setVisible(true);
 
-            GameFrame gameFrame = new GameFrame();
-            gameFrame.setVisible(false);
-            gameFrame.dispose();
-
+            GameFrame.this.dispose();
         }
     }
 }

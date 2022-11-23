@@ -1,4 +1,4 @@
-package TetrisGUI;
+package GUI;
 
 import TetrisBlocks.*;
 
@@ -39,7 +39,6 @@ public class GameArea extends JPanel {
     }
 
     //setters and getters here
-
     public void setGRows() {
         gRows = this.getBounds().height / getGCellSize();
     }
@@ -50,7 +49,7 @@ public class GameArea extends JPanel {
 
     public int getGCols() {
         //g=grid here
-        /*To get a perfect square for all cell size, first I divide cellsize with rows and cols to get the ratio
+        /*To get a perfect square for all cell size, first I divide cell size with rows and cols to get the ratio
     in order to build a perfect square grid*/
         return 10;
     }

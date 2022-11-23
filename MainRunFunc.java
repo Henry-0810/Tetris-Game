@@ -1,9 +1,8 @@
-package TetrisGUI;
+import GUI.GameMainMenu;
 
-import javax.swing.*;
 import java.awt.*;
 
-public class Tetris {
+public class MainRunFunc {
     public static Font font = null;
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {

@@ -1,4 +1,4 @@
-package TetrisGUI;
+package GUI;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,6 +14,15 @@ public class GameThread extends Thread{
     public void setGameArea(GameArea gameArea) {
         this.gameArea = gameArea;
     }
+    public static int speed;
+
+    public void setSpeed(int speed) {
+        GameThread.speed = speed;
+    }
+
+    public static int getSpeed() {
+        return speed;
+    }
 
     public void run() {
         while (true) {
@@ -21,7 +30,7 @@ public class GameThread extends Thread{
 
             while(gameArea.blocksDrop()) {
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(getSpeed());
                 } catch (InterruptedException e) {
                     Logger.getLogger(GameThread.class.getName()).log(Level.SEVERE, null, e);
                 }
@@ -33,7 +42,7 @@ public class GameThread extends Thread{
             }
 
             gameArea.setBlocksToBg();
-            score += gameArea.clearCompleteLines();
+            score += (gameArea.clearCompleteLines()*100);
 
         }
 
