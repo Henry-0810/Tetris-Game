@@ -1,12 +1,14 @@
 package GUI;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 //https://www.w3schools.com/java/java_threads.asp learn a few basics from this website
 public class GameThread extends Thread{
+    private GameLabels gameLabels;
     private GameArea gameArea;
-    private int score = 0;
     public GameThread(GameArea gameArea){
         setGameArea(gameArea);
     }
@@ -36,16 +38,22 @@ public class GameThread extends Thread{
                 }
             }
 
+//            if(gameLabels.getModeLabel().equals(new JLabel("U a GOD!"))){
+//                Timer timer = new Timer(3000, e -> {
+//                    if(!gameArea.isGameOver()) {
+//                        Winner winner = new Winner();
+//                        winner.setVisible(true);
+//                    }
+//                });
+//            }
+            //was trying to make aa timer for the hardest game mode, if survive after 30 seconds, player name will be stored in Hall of fame file
             if(gameArea.isGameOver()){
-                GameFrame game = new GameFrame();
-                game.dispose();
                 GameOver gameOver = new GameOver();
                 gameOver.setVisible(true);
                 break;
             }
 
             gameArea.setBlocksToBg();
-            score += (gameArea.clearCompleteLines()*100);
 
         }
 

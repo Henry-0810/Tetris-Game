@@ -1,15 +1,13 @@
 package GUI;
 
 import javax.swing.*;
-import javax.swing.border.Border;
+
 import javax.swing.border.LineBorder;
-import javax.swing.plaf.BorderUIResource;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.font.TextAttribute;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class GameDifficulty extends JFrame {
     public static ImageIcon imageIcon = new ImageIcon("GUI/additionalFiles/GameIcon.png"); //game icon
@@ -45,7 +43,7 @@ public class GameDifficulty extends JFrame {
             select.setBounds(50,0,350,50);
             this.add(select);
             JButton easy = new JButton();
-            easy.setText("Too easy!");
+            easy.setText("Too weak!");
             easy.setToolTipText("Easy mode");
             easy.setBounds(100,80,200,50);
             easy.setBackground(new Color(190,179,148));
@@ -53,7 +51,7 @@ public class GameDifficulty extends JFrame {
             easy.setFont(new Font("Monospaced",Font.PLAIN,30));
             easy.addActionListener(new gameModeEasy());
             JButton medium = new JButton();
-            medium.setText("Weak!");
+            medium.setText("Basic~");
             medium.setToolTipText("Normal mode");
             medium.setBounds(100,150,200,50);
             medium.setBackground(new Color(175,220,235));
@@ -61,16 +59,25 @@ public class GameDifficulty extends JFrame {
             medium.setFont(new Font("Monospaced",Font.PLAIN,30));
             medium.addActionListener(new gameModeMedium());
             JButton hard = new JButton();
-            hard.setText("U a GOD!");
+            hard.setText("WOW!");
             hard.setToolTipText("Hard mode");
             hard.setBounds(100,220,200,50);
             hard.setBackground(new Color(241,21,20));
             hard.setForeground(Color.white);
             hard.setFont(new Font("Monospaced",Font.PLAIN,30));
             hard.addActionListener(new gameModeHard());
+            JButton god = new JButton();
+            god.setText("U a GOD!");
+            god.setToolTipText("GOD mode");
+            god.setBounds(100,290,200,50);
+            god.setBackground(Color.black);
+            god.setForeground(Color.white);
+            god.setFont(new Font("Monospaced",Font.PLAIN,30));
+            god.addActionListener(new gameModeGod());
             this.add(easy);
             this.add(medium);
             this.add(hard);
+            this.add(god);
         }
     }
 
@@ -103,9 +110,10 @@ public class GameDifficulty extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             GameThread gameThread = new GameThread(new GameArea());
-            gameThread.setSpeed(1000);
+            gameThread.setSpeed(500);
             GameFrame gameFrame = new GameFrame();
             gameFrame.gameStart();
+            GameFrame.modes("Too weak!");
 
             GameDifficulty.this.dispose();
         }
@@ -116,9 +124,10 @@ public class GameDifficulty extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             GameThread gameThread = new GameThread(new GameArea());
-            gameThread.setSpeed(400);
+            gameThread.setSpeed(250);
             GameFrame gameFrame = new GameFrame();
             gameFrame.gameStart();
+            GameFrame.modes("Basic~");
 
             GameDifficulty.this.dispose();
         }
@@ -132,6 +141,20 @@ public class GameDifficulty extends JFrame {
             gameThread.setSpeed(50);
             GameFrame gameFrame = new GameFrame();
             gameFrame.gameStart();
+            GameFrame.modes("WOW!");
+
+            GameDifficulty.this.dispose();
+        }
+    }
+
+    private class gameModeGod implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            GameThread gameThread = new GameThread(new GameArea());
+            gameThread.setSpeed(25);
+            GameFrame gameFrame = new GameFrame();
+            gameFrame.gameStart();
+            GameFrame.modes("U a GOD!");
 
             GameDifficulty.this.dispose();
         }

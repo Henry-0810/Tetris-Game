@@ -26,17 +26,23 @@ public class GameOver extends JFrame {
         //a small try on Timer class
         Timer timer = new Timer(6000, e -> {
             GameOver.this.dispose();
-//            String playerName = JOptionPane.showInputDialog(null,"It's over... Enter name!",
-//                    "Tetris 2.0",JOptionPane.QUESTION_MESSAGE,imageIcon);
-            int choices = JOptionPane.showConfirmDialog(null,"Do you wish to continue?",
-                    "Tetris 2.0", JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,imageIcon);
-            if(choices == JOptionPane.YES_OPTION){
-                GameDifficulty gameDifficulty = new GameDifficulty();
-                gameDifficulty.setVisible(true);
+            Object input = JOptionPane.showInputDialog(null,"It's over... Enter name!",
+                   "Tetris 2.0",JOptionPane.QUESTION_MESSAGE,imageIcon,null,"");
+            if(input != null) {
+                String playerName = input.toString();
+                System.out.println(playerName);
+                int choices = JOptionPane.showConfirmDialog(null, "Do you wish to continue?",
+                        "Tetris 2.0", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, imageIcon);
+                if (choices == JOptionPane.YES_OPTION) {
+                    GameDifficulty gameDifficulty = new GameDifficulty();
+                    gameDifficulty.setVisible(true);
+                } else {
+                    GameMainMenu gameMainMenu = new GameMainMenu();
+                    gameMainMenu.setVisible(true);
+                }
             }
-            else{
-                GameMainMenu gameMainMenu = new GameMainMenu();
-                gameMainMenu.setVisible(true);
+            else {
+                System.exit(0);
             }
         });
         timer.start();

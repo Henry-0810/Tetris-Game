@@ -16,6 +16,7 @@ public class GameArea extends JPanel {
     private ArrayList<Blocks> allBlocks;
     private Color[][] bgBlocks; //used color as the array type because diff shapes have diff colors
     private int linesCleared = 0;
+    private int score = 0;
 
     public GameArea() {
         this.setBounds(300, 5, 300, 600);
@@ -231,8 +232,10 @@ public class GameArea extends JPanel {
     public void rotateBlock(){
 
         if(blocks == null) return;
-        if(!validBlocksDrop() || !validLeftBorder() || !validRightBorder()) return;
-        blocks.rotate();
+        if(validRightBorder() && validLeftBorder() && validBlocksDrop()){
+            blocks.rotate();
+        }
+
         //make it so blocks won't rotate out of bounds
         if(blocks.getLeftBorder() < 0) blocks.setX(0);
         if(blocks.getRightBorder() >= getGCols()) blocks.setX(getGCols()-blocks.getBlockWidth());
@@ -256,7 +259,19 @@ public class GameArea extends JPanel {
 
             if(validCompleteLines){
                 linesCleared++;
-                GameFrame.refreshScores(linesCleared);
+                if(linesCleared == 1){
+                    score += 100;
+                }
+                else if (linesCleared == 2){
+                    score += 400;
+                }
+                else if (linesCleared == 3) {
+                    score += 900;
+                }
+                else{
+                    score += 1600;
+                }
+                GameFrame.refreshScores(score);
                 for (int i = 0; i < getGCols(); i++) {
                     bgBlocks[r][i] = null;
                 }
@@ -271,7 +286,7 @@ public class GameArea extends JPanel {
                 repaint();
             }
         }
-        return linesCleared;
+        return score;
     }
 
     public boolean isGameOver(){
@@ -284,9 +299,7 @@ public class GameArea extends JPanel {
 
     private void shiftDown(int row) {
         for (int r = row; r > 0; r--) {
-            for (int c = 0; c < getGCols(); c++) {
-                bgBlocks[r][c] = bgBlocks[r-1][c];
-            }
+            if (getGCols() >= 0) System.arraycopy(bgBlocks[r - 1], 0, bgBlocks[r], 0, getGCols());
         }
     }
 

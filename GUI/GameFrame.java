@@ -80,12 +80,17 @@ public class GameFrame extends JFrame {
 
     }
     public void gameStart(){
-        new GameThread(gameArea).start();
+        GameThread gameThread = new GameThread(gameArea);
+        gameThread.start();
     }
 
 
     public static void refreshScores(int score){
         gameLabels.getScoreLabel().setText("Score: " + score);
+    }
+
+    public static void modes(String mode){
+        gameLabels.getModeLabel().setText("Mode: " + mode);
     }
 
 

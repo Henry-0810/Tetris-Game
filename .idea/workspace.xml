@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="fonts">
-      <change afterPath="$PROJECT_DIR$/GUI/GameOver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/additionalFiles/BackBtnIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/additionalFiles/GameOverBG.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="Done">
+      <change afterPath="$PROJECT_DIR$/GUI/GameLeaderBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/GameDifficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameDifficulty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/GameMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GameLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GameOver.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameOver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainRunFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainRunFunc.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,24 +38,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;279&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/T00229172/IdeaProjects/Tetris_Battle/TetrisGUI/additionalFiles&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propGUI&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "279",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/T00229172/IdeaProjects/Tetris_Battle/TetrisGUI/additionalFiles",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propGUI"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\T00229172\IdeaProjects\Tetris_Battle\TetrisGUI\additionalFiles" />
@@ -137,7 +133,7 @@
       <workItem from="1669122324675" duration="3115000" />
       <workItem from="1669126228710" duration="5859000" />
       <workItem from="1669194584560" duration="7507000" />
-      <workItem from="1669213654147" duration="11648000" />
+      <workItem from="1669213654147" duration="19660000" />
     </task>
     <task id="LOCAL-00001" summary="GUI grid done">
       <created>1668598945177</created>
@@ -181,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669125623793</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Done">
+      <created>1669227025044</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669227025044</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +208,7 @@
     <MESSAGE value="labels" />
     <MESSAGE value="created new blocks" />
     <MESSAGE value="fonts" />
-    <option name="LAST_COMMIT_MESSAGE" value="fonts" />
+    <MESSAGE value="Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done" />
   </component>
 </project>
