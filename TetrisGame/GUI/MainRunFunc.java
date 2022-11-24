@@ -1,4 +1,4 @@
-package TetrisGame;
+package TetrisGame.GUI;
 
 import TetrisGame.GUI.GameMainMenu;
 
