@@ -5,7 +5,7 @@ import java.awt.*;
 import java.io.*;
 
 public class GameOver extends JFrame {
-    ImageIcon imageIcon = new ImageIcon("GUI/additionalFiles/GameIcon.png"); //game icon
+    ImageIcon imageIcon = new ImageIcon("TetrisGame/GUI/additionalFiles/GameIcon.png"); //game icon
     public GameOver(){
         this.setTitle("Tetris 2.0");
         JPanel bgPanel = new JPanel();
@@ -63,7 +63,7 @@ public class GameOver extends JFrame {
             this.setBounds(-10,0,500,500);
             try
             {
-                image = Toolkit.getDefaultToolkit().createImage("GUI/additionalFiles/GameOverBG.gif");
+                image = Toolkit.getDefaultToolkit().createImage("TetrisGame/GUI/additionalFiles/GameOverBG.gif");
             }
             catch (Exception e) { /*handled in paintComponent()*/ }
         }

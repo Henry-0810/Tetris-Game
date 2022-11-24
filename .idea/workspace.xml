@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="OFFICIALLY DONE">
+    <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="Last time">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TetrisGame/MainRunFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/MainRunFunc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/GameDifficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameDifficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/GameMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/GameOver.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameOver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +66,7 @@
       <recent name="C:\Users\T00229172\IdeaProjects\Tetris_Battle\TetrisGUI" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainRunFunc">
+  <component name="RunManager" selected="Application.TetrisGame.GUI.MainRunFunc">
     <configuration name="GameForm" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TetrisGUI.GameForm" />
       <module name="Tetris Battle" />
@@ -90,16 +93,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TetrisGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="TetrisGUI" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TetrisGUI" />
       <module name="Tetris Battle" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TetrisGame.GUI.MainRunFunc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TetrisGame.GUI.MainRunFunc" />
+      <module name="Tetris Battle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TetrisGame.GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TetrisGUI" />
+        <item itemvalue="Application.TetrisGame.GUI.MainRunFunc" />
       </list>
     </recent_temporary>
   </component>
@@ -130,7 +146,7 @@
       <workItem from="1669194584560" duration="7507000" />
       <workItem from="1669213654147" duration="19765000" />
       <workItem from="1669298466700" duration="10874000" />
-      <workItem from="1669311358652" duration="4577000" />
+      <workItem from="1669311358652" duration="6665000" />
     </task>
     <task id="LOCAL-00001" summary="GUI grid done">
       <created>1668598945177</created>
@@ -209,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669316366142</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Last time">
+      <created>1669317346746</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669317346746</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +260,7 @@
     <MESSAGE value="testing" />
     <MESSAGE value="doing serialization" />
     <MESSAGE value="OFFICIALLY DONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="OFFICIALLY DONE" />
+    <MESSAGE value="Last time" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last time" />
   </component>
 </project>

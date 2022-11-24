@@ -1,3 +1,5 @@
+/**
+ * This package is creates GUI, algorithms and runs the game.**/
 package TetrisGame.GUI;
 
 import javax.swing.*;
@@ -5,13 +7,16 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+/**Instantiate a GameFrame object that adds GameArea frame into it
+ * **/
 public class GameFrame extends JFrame {
-    ImageIcon imageIcon = new ImageIcon("GUI/additionalFiles/GameIcon.png"); //game icon
+    ImageIcon imageIcon = new ImageIcon("TetrisGame/GUI/additionalFiles/GameIcon.png"); //game icon
     private GameThread gameThread;
     private GameArea gameArea;
     private static final GameLabels gameLabels = new GameLabels();
-
+    /**
+    * The constructor of this game
+    * **/
     public GameFrame(){
         this.setTitle("Tetris 2.0");
         JPanel bgFrame = new BGPanel();
@@ -31,15 +36,21 @@ public class GameFrame extends JFrame {
         this.setVisible(true);
         keyBinds();
     }
-
+    /**
+    * Getters for Game Area (The tetris grid pane)
+     * **/
     public GameArea getGameArea() {
         return gameArea;
     }
-
+    /**
+     * Setters for Game Area (The tetris grid pane)
+     * **/
     public void setGameArea() {
         this.gameArea = new GameArea();
     }
-
+    /**
+     * Key-binds for the game
+     * **/
     private void keyBinds(){
         //https://docs.oracle.com/javase/7/docs/api/javax/swing/InputMap.html
         //https://docs.oracle.com/javase/7/docs/api/javax/swing/ActionMap.html
@@ -80,21 +91,30 @@ public class GameFrame extends JFrame {
 
 
     }
+    /**
+    * Start Tetris Game
+    * **/
     public void gameStart(){
         gameThread = new GameThread(gameArea,this);
         gameThread.start();
     }
 
-
+    /**
+    * Refreshes score everytime a player clears line**/
     public static void refreshScores(int score){
         gameLabels.getScoreLabel().setText("Score: " + score);
     }
 
+    /**
+    * Display the game mode chose by the player
+    * **/
     public static void modes(String mode){
         gameLabels.getModeLabel().setText("Mode: " + mode);
     }
 
-
+    /**
+    * Adds image to the panel and set it as the main frame's content pane
+    * **/
     //https://coderanch.com/wiki/660351/Background-Image-JPanel
     //code below is to change the background of my JFrame by adding a background image panel to it
     private static class BGPanel extends JPanel
@@ -104,7 +124,7 @@ public class GameFrame extends JFrame {
         {
             try
             {
-                image = Toolkit.getDefaultToolkit().createImage("GUI/additionalFiles/GameFormBG.png");
+                image = Toolkit.getDefaultToolkit().createImage("TetrisGame/GUI/additionalFiles/GameFormBG.png");
             }
             catch (Exception e) { /*handled in paintComponent()*/ }
         }
@@ -118,8 +138,11 @@ public class GameFrame extends JFrame {
         }
     }
 
+    /**
+    * A class for creating back buttons
+    * **/
     public class BackBtn extends JButton{
-        ImageIcon img = new ImageIcon("GUI/additionalFiles/BackBtnIcon.png");
+        ImageIcon img = new ImageIcon("TetrisGame/GUI/additionalFiles/BackBtnIcon.png");
         public BackBtn(){
             this.setIcon(img);
             this.setBounds(0,10,50,60);
@@ -130,6 +153,9 @@ public class GameFrame extends JFrame {
         }
     }
 
+    /**
+    * Button's action listener that closes this frame and show the Game Difficulty frame
+    * **/
     public class BackToMainMenu implements ActionListener
     {
         //@SuppressWarnings("deprecation")

@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 
 
 public class GameDifficulty extends JFrame {
-    public static ImageIcon imageIcon = new ImageIcon("GUI/additionalFiles/GameIcon.png"); //game icon
+    public static ImageIcon imageIcon = new ImageIcon("TetrisGame/GUI/additionalFiles/GameIcon.png"); //game icon
     private GameThread gameThread;
     private GameFrame gameFrame;
     private GameArea gameArea;
@@ -85,7 +85,7 @@ public class GameDifficulty extends JFrame {
     }
 
     public class BackBtn extends JButton{
-        ImageIcon img = new ImageIcon("GUI/additionalFiles/BackBtnIcon.png");
+        ImageIcon img = new ImageIcon("TetrisGame/GUI/additionalFiles/BackBtnIcon.png ");
         public BackBtn(){
             this.setIcon(img);
             this.setBounds(0,10,50,50);

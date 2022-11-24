@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class GameMainMenu extends JFrame {
-    public static ImageIcon imageIcon = new ImageIcon("GUI/additionalFiles/GameIcon.png"); //game icon
+    public static ImageIcon imageIcon = new ImageIcon("TetrisGame/GUI/additionalFiles/GameIcon.png"); //game icon
 
     public GameMainMenu() {
         this.setTitle("Tetris 2.0");
@@ -79,7 +79,7 @@ public class GameMainMenu extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                File myObj = new File("GUI/additionalFiles/LastPlayer.txt");
+                File myObj = new File("TetrisGame/GUI/additionalFiles/LastPlayer.txt");
                 Scanner myReader = new Scanner(myObj);
                 while (myReader.hasNextLine()) {
                     String data = myReader.nextLine();
@@ -104,7 +104,7 @@ public class GameMainMenu extends JFrame {
             this.setBackground(new Color(0f,0f,0f,0.5f));
             try
             {
-                image = Toolkit.getDefaultToolkit().createImage("GUI/additionalFiles/GameTitlePic.png");
+                image = Toolkit.getDefaultToolkit().createImage("TetrisGame/GUI/additionalFiles/GameTitlePic.png");
             }
             catch (Exception e) { /*handled in paintComponent()*/ }
         }
