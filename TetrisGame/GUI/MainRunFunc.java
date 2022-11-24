@@ -10,7 +10,7 @@ public class MainRunFunc {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                GameMainMenu tetrisMainMenu = new GameMainMenu();
+                GameMainMenu tetris = new GameMainMenu();
             }
         });
     }
