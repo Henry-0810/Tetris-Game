@@ -1,16 +1,17 @@
 package GUI;
 
-import javax.swing.*;
-import java.awt.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 
 //https://www.w3schools.com/java/java_threads.asp learn a few basics from this website
 public class GameThread extends Thread{
-    private GameLabels gameLabels;
+    private final AtomicBoolean runner = new AtomicBoolean(false);
+    private GameFrame gameFrame;
     private GameArea gameArea;
-    public GameThread(GameArea gameArea){
+    public GameThread(GameArea gameArea, GameFrame gameFrame){
+
         setGameArea(gameArea);
+        this.gameFrame = gameFrame;
     }
 
     public void setGameArea(GameArea gameArea) {
@@ -27,36 +28,28 @@ public class GameThread extends Thread{
     }
 
     public void run() {
-        while (true) {
+        runner.set(true);
+        while (runner.get()) {
             gameArea.createBlocks();
 
             while(gameArea.blocksDrop()) {
                 try {
                     Thread.sleep(getSpeed());
                 } catch (InterruptedException e) {
-                    Logger.getLogger(GameThread.class.getName()).log(Level.SEVERE, null, e);
+                    return;
                 }
             }
 
-//            if(gameLabels.getModeLabel().equals(new JLabel("U a GOD!"))){
-//                Timer timer = new Timer(3000, e -> {
-//                    if(!gameArea.isGameOver()) {
-//                        Winner winner = new Winner();
-//                        winner.setVisible(true);
-//                    }
-//                });
-//            }
-            //was trying to make aa timer for the hardest game mode, if survive after 30 seconds, player name will be stored in Hall of fame file
             if(gameArea.isGameOver()){
+
+                gameFrame.dispose();
                 GameOver gameOver = new GameOver();
                 gameOver.setVisible(true);
                 break;
             }
 
             gameArea.setBlocksToBg();
-
         }
-
-
     }
+
 }

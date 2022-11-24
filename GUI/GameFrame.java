@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 
 public class GameFrame extends JFrame {
     ImageIcon imageIcon = new ImageIcon("GUI/additionalFiles/GameIcon.png"); //game icon
+    private GameThread gameThread;
     private GameArea gameArea;
     private static final GameLabels gameLabels = new GameLabels();
 
@@ -80,7 +81,7 @@ public class GameFrame extends JFrame {
 
     }
     public void gameStart(){
-        GameThread gameThread = new GameThread(gameArea);
+        gameThread = new GameThread(gameArea,this);
         gameThread.start();
     }
 

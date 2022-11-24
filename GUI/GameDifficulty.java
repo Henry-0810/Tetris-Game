@@ -11,6 +11,9 @@ import java.awt.event.ActionListener;
 
 public class GameDifficulty extends JFrame {
     public static ImageIcon imageIcon = new ImageIcon("GUI/additionalFiles/GameIcon.png"); //game icon
+    private GameThread gameThread;
+    private GameFrame gameFrame;
+    private GameArea gameArea;
 
     public GameDifficulty(){
         this.setTitle("Tetris 2.0");
@@ -109,7 +112,7 @@ public class GameDifficulty extends JFrame {
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            GameThread gameThread = new GameThread(new GameArea());
+            gameThread = new GameThread(gameArea,gameFrame);
             gameThread.setSpeed(500);
             GameFrame gameFrame = new GameFrame();
             gameFrame.gameStart();
@@ -123,7 +126,7 @@ public class GameDifficulty extends JFrame {
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            GameThread gameThread = new GameThread(new GameArea());
+            gameThread = new GameThread(gameArea,gameFrame);
             gameThread.setSpeed(250);
             GameFrame gameFrame = new GameFrame();
             gameFrame.gameStart();
@@ -137,7 +140,7 @@ public class GameDifficulty extends JFrame {
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            GameThread gameThread = new GameThread(new GameArea());
+            gameThread = new GameThread(gameArea,gameFrame);
             gameThread.setSpeed(50);
             GameFrame gameFrame = new GameFrame();
             gameFrame.gameStart();
@@ -150,13 +153,18 @@ public class GameDifficulty extends JFrame {
     private class gameModeGod implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            GameThread gameThread = new GameThread(new GameArea());
+            GameDifficulty.this.dispose();
+            gameThread = new GameThread(gameArea,gameFrame);
             gameThread.setSpeed(25);
             GameFrame gameFrame = new GameFrame();
             gameFrame.gameStart();
             GameFrame.modes("U a GOD!");
-
-            GameDifficulty.this.dispose();
+//            Timer timer = new Timer(3000,e -> {
+//                gameFrame.dispose();
+//                System.out.println("You win!");
+//            });
+//            timer.start();
+//            timer.setRepeats(false);
         }
     }
 }

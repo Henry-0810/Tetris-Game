@@ -1,8 +1,8 @@
-import GUI.GameFrame;
 import GUI.GameMainMenu;
-import GUI.GameOver;
+import GUI.Serialization;
 
 import java.awt.*;
+import java.io.IOException;
 
 public class MainRunFunc {
     public static Font font = null;
