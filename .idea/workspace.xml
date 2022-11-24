@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="testing">
-      <change afterPath="$PROJECT_DIR$/GUI/Serialization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/additionalFiles/leaderboard.txt" afterDir="false" />
+    <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="doing serialization">
+      <change afterPath="$PROJECT_DIR$/GUI/ViewPreviousPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/GameDifficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameDifficulty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/GameLeaderBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameLeaderBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/GameOver.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameOver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainRunFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainRunFunc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GameLeaderBoard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GameMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Serialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/additionalFiles/leaderboard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/additionalFiles/LastPlayer.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +132,8 @@
       <workItem from="1669126228710" duration="5859000" />
       <workItem from="1669194584560" duration="7507000" />
       <workItem from="1669213654147" duration="19765000" />
-      <workItem from="1669298466700" duration="10848000" />
+      <workItem from="1669298466700" duration="10874000" />
+      <workItem from="1669311358652" duration="1470000" />
     </task>
     <task id="LOCAL-00001" summary="GUI grid done">
       <created>1668598945177</created>
@@ -193,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669234926028</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="doing serialization">
+      <created>1669311211427</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669311211427</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +224,7 @@
     <MESSAGE value="fonts" />
     <MESSAGE value="Done" />
     <MESSAGE value="testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing" />
+    <MESSAGE value="doing serialization" />
+    <option name="LAST_COMMIT_MESSAGE" value="doing serialization" />
   </component>
 </project>

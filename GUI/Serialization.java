@@ -6,30 +6,14 @@ public class Serialization {
     private String playerName;
     public Serialization(String playerName) throws IOException {
 
-        BufferedWriter writer = null;
-        try
-        {
-            writer = new BufferedWriter( new FileWriter("GUI/additionalFiles/leaderboard.txt"));
-            writer.write("This is the 5 previous player that played Tetris 2.0:\n");
+        try {
+            FileWriter recordLastPlayer = new FileWriter("GUI/additionalFiles/LastPlayer.txt");
             setPlayerName(playerName);
-            writer.write(getPlayerName());
-
-        }
-        catch ( IOException e)
-        {
+            recordLastPlayer.write(getPlayerName());
+            recordLastPlayer.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
             e.printStackTrace();
-        }
-        finally
-        {
-            try
-            {
-                if ( writer != null)
-                    writer.close( );
-            }
-            catch ( IOException e)
-            {
-                e.printStackTrace();
-            }
         }
     }
 

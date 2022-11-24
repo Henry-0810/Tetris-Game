@@ -21,8 +21,14 @@ public class GameMainMenu extends JFrame {
         start.setForeground(Color.white);
         start.setFont(new Font("Monospaced",Font.PLAIN,30));
         start.addActionListener(new StartGame());
+        JButton history = new JButton("Previous Contender");
+        history.setBounds(50,260,400,50);
+        history.setBackground(Color.black);
+        history.setForeground(Color.white);
+        history.setFont(new Font("Monospaced",Font.PLAIN,30));
+        history.addActionListener(new ViewPlayer());
         JButton exit = new JButton("Exit");
-        exit.setBounds(150,260,175,50);
+        exit.setBounds(150,320,175,50);
         exit.setBackground(Color.black);
         exit.setForeground(Color.white);
         exit.setFont(new Font("Monospaced",Font.PLAIN,30));
@@ -31,6 +37,7 @@ public class GameMainMenu extends JFrame {
         this.add(title);
         this.add(titlePic);
         this.add(start);
+        this.add(history);
         this.add(exit);
         this.setSize(500, 500);
         this.setLayout(null);
@@ -38,8 +45,6 @@ public class GameMainMenu extends JFrame {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
-
-
     }
 
     private class StartGame implements ActionListener
@@ -63,6 +68,15 @@ public class GameMainMenu extends JFrame {
             if(exitInterface == JOptionPane.YES_OPTION){
                 System.exit(0);
             }
+        }
+    }
+
+    private class ViewPlayer implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            GameMainMenu.this.dispose();
+            ViewPreviousPlayer viewPreviousPlayer = new ViewPreviousPlayer();
+            viewPreviousPlayer.setVisible(true);
         }
     }
 
