@@ -1,6 +1,6 @@
-package TetrisBlocks;
+package TetrisGame.TetrisBlocks;
 
-import GUI.Blocks;
+import TetrisGame.GUI.Blocks;
 
 import java.awt.*;
 

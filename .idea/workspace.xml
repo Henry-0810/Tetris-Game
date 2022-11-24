@@ -5,12 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="doing serialization">
-      <change afterPath="$PROJECT_DIR$/GUI/ViewPreviousPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/LastPlayer.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/GameLeaderBoard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/GameMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/GameMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/Serialization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/additionalFiles/leaderboard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/additionalFiles/LastPlayer.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Blocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/Blocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GameDifficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameDifficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GameLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GameMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GameOver.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameOver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/Serialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/ViewPreviousPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/additionalFiles/BackBtnIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/BackBtnIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/additionalFiles/GameAreaBG.png" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/GameAreaBG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/additionalFiles/GameFormBG.png" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/GameFormBG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/additionalFiles/GameIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/GameIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/additionalFiles/GameOverBG.gif" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/GameOverBG.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/additionalFiles/GameTitlePic.png" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/GameTitlePic.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/additionalFiles/LastPlayer.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainRunFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/MainRunFunc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisBlocks/IShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/TetrisBlocks/IShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisBlocks/LShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/TetrisBlocks/LShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisBlocks/OpLShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/TetrisBlocks/OpLShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisBlocks/OpZShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/TetrisBlocks/OpZShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisBlocks/SquareShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/TetrisBlocks/SquareShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisBlocks/TShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/TetrisBlocks/TShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisBlocks/ZShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/TetrisBlocks/ZShape.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +102,7 @@
       </method>
     </configuration>
     <configuration name="MainRunFunc" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainRunFunc" />
+      <option name="MAIN_CLASS_NAME" value="TetrisGame.TetrisBlocks.MainRunFunc" />
       <module name="Tetris Battle" />
       <extension name="coverage">
         <pattern>
@@ -133,7 +154,7 @@
       <workItem from="1669194584560" duration="7507000" />
       <workItem from="1669213654147" duration="19765000" />
       <workItem from="1669298466700" duration="10874000" />
-      <workItem from="1669311358652" duration="1470000" />
+      <workItem from="1669311358652" duration="3561000" />
     </task>
     <task id="LOCAL-00001" summary="GUI grid done">
       <created>1668598945177</created>
@@ -198,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669311211427</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="doing serialization">
+      <created>1669312871126</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669312871126</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

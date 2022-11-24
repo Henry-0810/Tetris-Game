@@ -1,6 +1,6 @@
-package GUI;
+package TetrisGame.GUI;
 
-import TetrisBlocks.*;
+import TetrisGame.TetrisBlocks.*;
 
 import javax.swing.*;
 import javax.swing.border.Border;

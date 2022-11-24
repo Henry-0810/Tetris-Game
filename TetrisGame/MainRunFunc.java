@@ -1,8 +1,8 @@
-import GUI.GameMainMenu;
-import GUI.Serialization;
+package TetrisGame;
+
+import TetrisGame.GUI.GameMainMenu;
 
 import java.awt.*;
-import java.io.IOException;
 
 public class MainRunFunc {
     public static Font font = null;

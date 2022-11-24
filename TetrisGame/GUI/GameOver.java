@@ -1,11 +1,8 @@
-package GUI;
+package TetrisGame.GUI;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
-import java.util.ArrayList;
 
 public class GameOver extends JFrame {
     ImageIcon imageIcon = new ImageIcon("GUI/additionalFiles/GameIcon.png"); //game icon
@@ -44,16 +41,14 @@ public class GameOver extends JFrame {
                     ex.printStackTrace();
                 }
             }
-            else {
-                int choices = JOptionPane.showConfirmDialog(null, "Thank you! Play again?",
-                        "Tetris 2.0", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, imageIcon);
-                if (choices == JOptionPane.YES_OPTION) {
-                    GameDifficulty gameDifficulty = new GameDifficulty();
-                    gameDifficulty.setVisible(true);
-                } else {
-                    GameMainMenu gameMainMenu = new GameMainMenu();
-                    gameMainMenu.setVisible(true);
-                }
+            int choices = JOptionPane.showConfirmDialog(null, "Thank you! Play again?",
+                    "Tetris 2.0", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, imageIcon);
+            if (choices == JOptionPane.YES_OPTION) {
+                GameDifficulty gameDifficulty = new GameDifficulty();
+                gameDifficulty.setVisible(true);
+            } else {
+                GameMainMenu gameMainMenu = new GameMainMenu();
+                gameMainMenu.setVisible(true);
             }
         });
         timer.start();

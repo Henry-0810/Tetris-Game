@@ -1,4 +1,4 @@
-package GUI;
+package TetrisGame.GUI;
 
 import java.awt.*;
 import java.util.Random;

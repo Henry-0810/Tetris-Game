@@ -1,4 +1,4 @@
-package GUI;
+package TetrisGame.GUI;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -49,6 +49,7 @@ public class GameThread extends Thread{
             }
 
             gameArea.setBlocksToBg();
+            gameArea.clearCompleteLines();
         }
     }
 

@@ -1,9 +1,12 @@
-package GUI;
+package TetrisGame.GUI;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class GameMainMenu extends JFrame {
     public static ImageIcon imageIcon = new ImageIcon("GUI/additionalFiles/GameIcon.png"); //game icon
@@ -71,12 +74,24 @@ public class GameMainMenu extends JFrame {
         }
     }
 
+
     private class ViewPlayer implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            GameMainMenu.this.dispose();
-            ViewPreviousPlayer viewPreviousPlayer = new ViewPreviousPlayer();
-            viewPreviousPlayer.setVisible(true);
+            try {
+                File myObj = new File("GUI/additionalFiles/LastPlayer.txt");
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    JOptionPane.showMessageDialog(null,
+                            "This is the previous player that played Tetris 2.0:\n"+data,"Tetris 2.0",
+                            JOptionPane.INFORMATION_MESSAGE,imageIcon);
+                }
+                myReader.close();
+            } catch (FileNotFoundException exception) {
+                System.out.println("An error occurred.");
+                exception.printStackTrace();
+            }
         }
     }
 
