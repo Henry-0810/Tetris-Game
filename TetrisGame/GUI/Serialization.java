@@ -7,7 +7,7 @@ public class Serialization {
     public Serialization(String playerName) throws IOException {
 
         try {
-            FileWriter recordLastPlayer = new FileWriter("GUI/additionalFiles/LastPlayer.txt");
+            FileWriter recordLastPlayer = new FileWriter("TetrisGame/GUI/additionalFiles/LastPlayer.txt");
             setPlayerName(playerName);
             recordLastPlayer.write(getPlayerName());
             recordLastPlayer.close();
