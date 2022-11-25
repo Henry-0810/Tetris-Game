@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="done">
-      <change afterPath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/HallOfFame.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TetrisGame/HallOfFame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/Serialization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/GameAreaBG.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/LastPlayer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/LastPlayer.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/HallOfFame.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisGame/HallOfFame.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +55,8 @@
       <recent name="C:\Users\T00229172\IdeaProjects\Tetris_Battle\GUI" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\T00229172\IdeaProjects\Tetris_Battle\TetrisGame\GUI\additionalFiles" />
       <recent name="C:\Users\T00229172\IdeaProjects\Tetris_Battle\TetrisGame\Documentation" />
+      <recent name="C:\Users\T00229172\IdeaProjects\Tetris_Battle\TetrisGame\GUI\additionalFiles" />
       <recent name="C:\Users\t00229172\IdeaProjects\Tetris_Battle\GUI\additionalFiles" />
       <recent name="C:\Users\T00229172\IdeaProjects\Tetris_Battle\TetrisGUI\additionalFiles" />
       <recent name="C:\Users\t00229172\IdeaProjects\Tetris_Battle\TetrisGUI\additionalFiles" />
@@ -153,7 +146,7 @@
       <workItem from="1669213654147" duration="19765000" />
       <workItem from="1669298466700" duration="10874000" />
       <workItem from="1669311358652" duration="6992000" />
-      <workItem from="1669374238492" duration="4036000" />
+      <workItem from="1669374238492" duration="4337000" />
     </task>
     <task id="LOCAL-00001" summary="GUI grid done">
       <created>1668598945177</created>
@@ -253,7 +246,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669375677234</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="done">
+      <created>1669378479018</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1669378479018</updated>
+    </task>
+    <task id="LOCAL-00016" summary="done">
+      <created>1669378630206</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1669378630206</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
