@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcae023e-9279-424f-b570-3ed368b7c3c9" name="Changes" comment="done">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/GameArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/GameOver.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameOver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/GameThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/Serialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/LastPlayer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisGame/GUI/additionalFiles/LastPlayer.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +147,7 @@
       <workItem from="1669213654147" duration="19765000" />
       <workItem from="1669298466700" duration="10874000" />
       <workItem from="1669311358652" duration="6992000" />
+      <workItem from="1669374238492" duration="1199000" />
     </task>
     <task id="LOCAL-00001" summary="GUI grid done">
       <created>1668598945177</created>

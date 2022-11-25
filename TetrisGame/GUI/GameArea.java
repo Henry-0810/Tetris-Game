@@ -39,6 +39,10 @@ public class GameArea extends JPanel {
 
     }
 
+    public int getScore() {
+        return score;
+    }
+
     //setters and getters here
     public void setGRows() {
         gRows = this.getBounds().height / getGCellSize();

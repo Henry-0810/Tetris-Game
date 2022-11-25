@@ -25,22 +25,7 @@ public class GameOver extends JFrame {
         //a small try on Timer class
         Timer timer = new Timer(6000, e -> {
             GameOver.this.dispose();
-            Object input = JOptionPane.showInputDialog(null,"It's over... Enter username!",
-                   "Tetris 2.0",JOptionPane.QUESTION_MESSAGE,imageIcon,null,"");
-            if(input != null) {
-                String playerName = input.toString();
-//                ArrayList<String> players = new ArrayList<>(5);
-//                players.add(playerName);
-//                if(players.size() > 5){
-//                    players.remove(0);
-//                }
-                try{
-                    Serialization saveFile = new Serialization(playerName);
-                }
-                catch (IOException ex){
-                    ex.printStackTrace();
-                }
-            }
+
             int choices = JOptionPane.showConfirmDialog(null, "Thank you! Play again?",
                     "Tetris 2.0", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, imageIcon);
             if (choices == JOptionPane.YES_OPTION) {
