@@ -11,7 +11,7 @@ public class Serialization {
             FileWriter recordLastPlayer = new FileWriter("TetrisGame/GUI/additionalFiles/LastPlayer.txt");
             setPlayerName(playerName);
             setScore(score);
-            recordLastPlayer.write(getPlayerName() + "\nHe/She scored " + getScore());
+            recordLastPlayer.write(getPlayerName() + ", He/She scored " + getScore() +" TRY TO BEAT IT IF U CAN");
             recordLastPlayer.close();
         } catch (IOException e) {
             System.out.println("An error occurred.");

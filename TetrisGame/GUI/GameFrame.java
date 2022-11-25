@@ -161,10 +161,11 @@ public class GameFrame extends JFrame {
         //@SuppressWarnings("deprecation")
         public void actionPerformed(ActionEvent action)
         {
+            gameThread.restart();
+            GameFrame.this.dispose();
             GameDifficulty gameDifficulty = new GameDifficulty();
             gameDifficulty.setVisible(true);
 
-            GameFrame.this.dispose();
         }
     }
 }

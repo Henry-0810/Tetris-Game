@@ -47,6 +47,7 @@ public class GameThread extends Thread{
                 }
             }
 
+
             if(gameArea.isGameOver()){
                 Object input = JOptionPane.showInputDialog(null,"It's over... Enter username!",
                         "Tetris 2.0",JOptionPane.QUESTION_MESSAGE,imageIcon,null,"");
@@ -69,6 +70,10 @@ public class GameThread extends Thread{
             gameArea.setBlocksToBg();
             gameArea.clearCompleteLines();
         }
+    }
+
+    public void restart(){
+        runner.set(false);
     }
 
 }
